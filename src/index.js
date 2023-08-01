@@ -40,3 +40,50 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
 };
 
 console.log('project wired!')
+
+
+// HEADER
+// navs
+const navs = document.querySelectorAll('a');
+const navArr = Object.values(siteContent.nav);
+for (let i = 0; i < navs.length - 1; i++) {
+  navs[i].className = "italic";
+  navs[i].textContent = navArr[i];
+}
+// img 
+const headImg = document.querySelector('#logo-img');
+headImg.setAttribute('src', siteContent.images["logo-img"]);
+
+// CTA SECTION
+// div
+const ctaDiv = document.querySelector('.cta-text');
+ctaDiv[0].textContent = siteContent.cta.h1;
+// ctaDiv.button = siteContent.cta.button;
+console.log(ctaDiv);
+
+// img
+const ctaImg = document.querySelector('#cta-img');
+ctaImg.setAttribute('src', siteContent.images['cta-img']);
+      
+    //   src=siteContent.images.cta-img
+    
+    //     const text = document.querySelectorAll('.text-content');
+    //       text[0] = siteContent.main-content._________-h4;
+    //       siteContent.main-content._________-content;
+    //         TOP
+    //           features
+    //           about
+    //         BOTTOM
+    //           services
+    //           product
+    //           vision
+
+    //   src = siteContent.images.middle-img
+    
+    // siteContent.contact.contact-h4
+    // siteContent.contact.address
+    // siteContent.contact.phone
+    // siteContent.contact.email
+    
+    // class="bold"
+    // siteContent.footer.copyright
