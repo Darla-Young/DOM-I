@@ -66,15 +66,16 @@ ctaImg.setAttribute('src', siteContent.images['cta-img']);
 
 // MAIN CONTENT
 // content
-const topics = document.querySelectorAll('.text-content');
+const topics = document.getElementsByTagName('h4');
+const content = document.getElementsByTagName('p');
 const topicsArr = Object.values(siteContent['main-content']);
 for (let i = 0; i < topics.length; i++) {
   if (i === 0) {
-    topics[i].firstChild.textContent = topicsArr[0];
-    topics[i].lastChild.textContent = topicsArr[1];
+    topics[i].textContent = topicsArr[0];
+    content[i].textContent = topicsArr[1]
   } else {
-    topics[i].firstChild.textContent = topicsArr[i * 2];
-    topics[i].lastChild.textContent = topicsArr[i * 2 + 1];
+    topics[i].textContent = topicsArr[i * 2];
+    content[i].textContent = topicsArr[i * 2 + 1];
   }
 }
 // img
@@ -82,14 +83,10 @@ const middleImg = document.querySelector('.middle-img');
 middleImg.setAttribute('src', siteContent.images['accent-img']);
 
 // CONTACT
-const contact = document.getElementsByTagName('h4')[5];
-const address = document.getElementsByTagName('p')[5];
-const phone = document.getElementsByTagName('p')[6];
-const email = document.getElementsByTagName('p')[7];
-contact.textContent = siteContent.contact['contact-h4'];
-address.textContent = siteContent.contact.address;
-phone.textContent = siteContent.contact.phone;
-email.textContent = siteContent.contact.email;
+topics[5].textContent = siteContent.contact['contact-h4'];
+content[5].textContent = siteContent.contact.address;
+content[6].textContent = siteContent.contact.phone;
+content[7].textContent = siteContent.contact.email;
 
 // FOOTER
 const copyright = navs[navs.length - 1];
