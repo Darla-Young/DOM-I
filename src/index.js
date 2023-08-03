@@ -55,35 +55,44 @@ const headImg = document.querySelector('#logo-img');
 headImg.setAttribute('src', siteContent.images["logo-img"]);
 
 // CTA SECTION
-// div
-const ctaDiv = document.querySelector('.cta-text');
-ctaDiv[0].textContent = siteContent.cta.h1;
-// ctaDiv.button = siteContent.cta.button;
-console.log(ctaDiv);
-
+// text
+const ctaText = document.getElementsByTagName('h1');
+const ctaButton = document.getElementsByTagName('button');
+ctaText[0].textContent = siteContent.cta.h1;
+ctaButton[0].textContent = siteContent.cta.button;
 // img
 const ctaImg = document.querySelector('#cta-img');
 ctaImg.setAttribute('src', siteContent.images['cta-img']);
-      
-    //   src=siteContent.images.cta-img
-    
-    //     const text = document.querySelectorAll('.text-content');
-    //       text[0] = siteContent.main-content._________-h4;
-    //       siteContent.main-content._________-content;
-    //         TOP
-    //           features
-    //           about
-    //         BOTTOM
-    //           services
-    //           product
-    //           vision
 
-    //   src = siteContent.images.middle-img
-    
-    // siteContent.contact.contact-h4
-    // siteContent.contact.address
-    // siteContent.contact.phone
-    // siteContent.contact.email
-    
-    // class="bold"
-    // siteContent.footer.copyright
+// MAIN CONTENT
+// content
+const topics = document.querySelectorAll('.text-content');
+const topicsArr = Object.values(siteContent['main-content']);
+for (let i = 0; i < topics.length; i++) {
+  if (i === 0) {
+    topics[i].firstChild.textContent = topicsArr[0];
+    topics[i].lastChild.textContent = topicsArr[1];
+  } else {
+    topics[i].firstChild.textContent = topicsArr[i * 2];
+    topics[i].lastChild.textContent = topicsArr[i * 2 + 1];
+  }
+}
+// img
+const middleImg = document.querySelector('.middle-img');
+middleImg.setAttribute('src', siteContent.images['accent-img']);
+
+// CONTACT
+const contact = document.getElementsByTagName('h4')[5];
+const address = document.getElementsByTagName('p')[5];
+const phone = document.getElementsByTagName('p')[6];
+const email = document.getElementsByTagName('p')[7];
+contact.textContent = siteContent.contact['contact-h4'];
+address.textContent = siteContent.contact.address;
+phone.textContent = siteContent.contact.phone;
+email.textContent = siteContent.contact.email;
+
+// FOOTER
+const copyright = navs[navs.length - 1];
+copyright.className = "bold";
+copyright.textContent = siteContent.footer.copyright;
+console.log(copyright);
