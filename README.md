@@ -1,4 +1,5 @@
 # DOM I
+[](DOM-I\mocks\img\GreatIdea.png)
 
 ## Project Description
 
