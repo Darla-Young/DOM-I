@@ -1,5 +1,5 @@
 # DOM I
-[](DOM-I\mocks\img\GreatIdea.png)
+[link](mocks\img\GreatIdea.png)
 
 ## Project Description
 
