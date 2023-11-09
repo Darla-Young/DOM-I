@@ -1,3 +1,12 @@
+# DOM is Awesome
+
+**Keywords**
+beginner
+querySelector
+for loop
+setAttribute
+textContent
+
 # DOM I
 [link](mocks\img\GreatIdea.png)
 
